@@ -1,0 +1,10 @@
+.text {
+  font-size: 100px;
+  color: red;
+  composes: blu from '../../app.css';
+}
+
+.italic {
+  font-style: italic;
+  color: green;
+}
