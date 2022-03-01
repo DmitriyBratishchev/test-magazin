@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
-import st from './header.module.css';
 // import './header.css';
+import st from './header.module.css';
 
 const Header = () => {
   const [italic, setItalic] = useState(true);
@@ -11,7 +11,7 @@ const Header = () => {
   };
   console.log('ital', italic);
   return (
-    <h1 onClick={ handleItalic } className={ classNames(st.text, italic ? st.italic : '') }>Привет</h1>
+    <h1 onClick={ handleItalic } className={ classNames(st.text, italic ? st.italic : '', 'blue') }>Привет, Ксюша!</h1>
   );
 };
 
