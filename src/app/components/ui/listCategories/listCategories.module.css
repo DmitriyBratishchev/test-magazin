@@ -1,0 +1,44 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.card {
+  width: 25%;
+  padding: 15px;
+}
+
+.headerCard {
+  display: inline-block;
+  background-color: #EBF2FF;
+  border-radius: 99px;
+  padding: 9px 16px;
+  font-size: 20px;
+}
+
+.listItem{
+  color: #5A5B6A;
+}
+.listItem:hover {
+  color: #5A5B6A;
+  text-shadow: 0 0 2px #cfcf05;
+}
+
+@media (max-width: 1200px) {
+  .card{
+    min-width: 33%;
+  }
+}
+
+@media (max-width: 991px) {
+  .card{
+    min-width: 50%;
+  }
+}
+
+@media (max-width: 576px) {
+  .card{
+    min-width: 100%;
+  }
+}

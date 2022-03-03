@@ -2,7 +2,8 @@ import React from 'react';
 import logo from './../../../img/label.jpg';
 import { Link } from 'react-router-dom';
 import Avatar from '../avatar';
-import { Button, CardImg } from 'reactstrap';
+import { CardImg } from 'reactstrap';
+import ButtonModalCategories from '../buttonModalCategories/buttonModalCategories';
 // import Logo from '../logo';
 
 const NavBar = () => {
@@ -28,7 +29,7 @@ const NavBar = () => {
               <input className='form-control me-2' type='search' placeholder='Поиск' aria-label='Search' />
               <button className='btn btn-outline-success text-white' type='submit'>Найти</button>
             </form> */}
-            <Button onClick={ (e) => console.log('click button', e) } >Click me</Button>
+            <ButtonModalCategories />
             <div className="nav-item">
               <Link className='nav-link' to='/basket'>Корзина</Link>
             </div>
