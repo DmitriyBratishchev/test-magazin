@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import CategoryCard from './categoryCard';
+import classNames from 'classnames';
+import s from './listCategories.module.css';
 
 const ListCategories = ({ toggle }) => {
   const [listData] = useState(
@@ -68,6 +71,22 @@ const ListCategories = ({ toggle }) => {
           {
             title: 'name4',
             link: 'name4'
+          },
+          {
+            title: 'name5',
+            link: 'name5'
+          },
+          {
+            title: 'name6',
+            link: 'name6'
+          },
+          {
+            title: 'name7',
+            link: 'name7'
+          },
+          {
+            title: 'name8',
+            link: 'name8'
           }
         ]
       },
@@ -94,8 +113,30 @@ const ListCategories = ({ toggle }) => {
         ]
       },
       {
-        title: '5 category',
+        title: '5 categoryfffff ffff frr rrrrrrrrrr',
         link: 'category5',
+        list: [
+          {
+            title: 'name1',
+            link: 'name1'
+          },
+          {
+            title: 'name2',
+            link: 'name2'
+          },
+          {
+            title: 'name3',
+            link: 'name3'
+          },
+          {
+            title: 'name4',
+            link: 'name4'
+          }
+        ]
+      },
+      {
+        title: '6 category',
+        link: 'category6',
         list: [
           {
             title: 'name1',
@@ -117,20 +158,16 @@ const ListCategories = ({ toggle }) => {
       }
     ]
   );
+  if (listData.length === 0) return <h3>Loading...</h3>;
   return (
-    <div>
+    <div className={ classNames(s.container) }>
       { listData.map(el => {
         return (
-          <div key={ el.title }>
-            <h3><Link to={ `/catalog/${el.link}` } onClick={ toggle }>{ el.title }</Link></h3>
-            <ul>
-              { el.list.map(item => {
-                return (
-                  <li key={ item.link }><Link to={ `/catalog/${el.link}/${item.link}` } onClick={ toggle }>{ item.title }</Link></li>
-                );
-              }) }
-            </ul>
-          </div>
+          <CategoryCard
+            key={ el.link }
+            list={ el }
+            toggle={ toggle }
+          />
         );
       })
       }

@@ -14,8 +14,10 @@ const ButtonModalCategories = ({ children }) => {
   return (
     <>
       <Button
-        color="transporent"
+        className='mt-3'
+        color="primary"
         onClick={ toggleOpen }
+        outline
       >
         Категории
       </Button>

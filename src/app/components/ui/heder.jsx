@@ -11,7 +11,7 @@ const Header = () => {
   };
   console.log('ital', italic);
   return (
-    <h1 onClick={ handleItalic } className={ classNames(st.text, italic ? st.italic : '', 'blue') }>Привет, Ксюша!</h1>
+    <h1 onClick={ handleItalic } className={ classNames(st.text, italic ? st.italic : '', 'blue') }>Привет!</h1>
   );
 };
 

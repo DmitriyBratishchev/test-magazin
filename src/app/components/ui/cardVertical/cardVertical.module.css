@@ -1,0 +1,15 @@
+.discription {
+  letter-spacing: .0275em;
+  color: #19191D
+}
+
+.price {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.options {
+  letter-spacing: .0175em;
+  color: #787885;
+  line-height: 143%;
+}

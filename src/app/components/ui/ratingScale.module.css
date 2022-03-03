@@ -1,0 +1,32 @@
+
+
+.starBlock {
+  width: 5.45em;
+  height: 1em;
+  position: relative;
+}
+
+.negative {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  background-image: url('./../../img/star-negative.svg');
+  background-repeat: repeat-x;
+  background-size: contain;
+}
+
+.positive {
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  background-image: url('./../../img/star-positive.svg');
+  background-repeat: repeat-x;
+  background-size: contain;
+}
+
+.text {
+  margin-left: 10px;
+  font-size: 14px;
+  font-weight: 500;
+}
