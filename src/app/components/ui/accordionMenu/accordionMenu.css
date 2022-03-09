@@ -1,0 +1,17 @@
+.accordion-accordionMenu:not(.collapsed) {
+  color: #19191D;
+  font-weight: 500;
+  background-color: #F7F7FA;
+}
+.accordion-button-accordionMenu:focus {
+  border: none;
+  box-shadow: none;
+}
+
+.accordion-button-accordionMenu:not(.collapsed) {
+  box-shadow: none;
+}
+
+.bg-color-accordionMenu {
+  background-color: #F7F7FA;
+}
