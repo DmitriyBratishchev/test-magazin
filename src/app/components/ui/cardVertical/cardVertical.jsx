@@ -5,7 +5,7 @@ import s from './cardVertical.module.css';
 
 const CardVertical = () => {
   return (
-    <div className='p-3 m-3 border' style={ { width: '259px' } }>
+    <div className={ s.cardVertical + ' p-3 m-2' }>
       <CardImg
         alt='Foto'
         top

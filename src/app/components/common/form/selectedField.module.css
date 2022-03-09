@@ -1,0 +1,18 @@
+.labelIn {
+  position: absolute;
+  left: 10px;
+  top: -13px;
+  background: #ffffff;
+  padding: 0 4px;
+}
+
+.arrow {
+  background-image: url('./../../../img/caret-down-fill.svg');
+}
+
+/* option {
+  font-size: 10px;
+} */
+select {
+  max-height: 38px;
+}

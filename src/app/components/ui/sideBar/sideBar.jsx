@@ -3,7 +3,7 @@ import ButtonModalCategories from '../buttonModalCategories/buttonModalCategorie
 
 const SideBar = () => {
   return (
-    <div className='col-3'>
+    <div className='col' style={ { maxWidth: '304px' } }>
       <ButtonModalCategories />
     </div>
   );
