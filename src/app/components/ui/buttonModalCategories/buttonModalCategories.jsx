@@ -13,7 +13,7 @@ const ButtonModalCategories = () => {
   return (
     <>
       <Button
-        className='ps-3 pe-3 d-flex align-items-center'
+        className='ps-3 pe-3 mb-3 d-flex align-items-center'
         color="primary"
         onClick={ toggleOpen }
         outline
