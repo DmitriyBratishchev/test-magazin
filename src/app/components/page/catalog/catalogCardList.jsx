@@ -3,7 +3,11 @@ import CardVertical from '../../ui/cardVertical/cardVertical';
 
 const CatalogCardList = () => {
   return (
-    <div>
+    <div className='d-flex flex-wrap justify-content-start mt-'>
+      <CardVertical />
+      <CardVertical />
+      <CardVertical />
+      <CardVertical />
       <CardVertical />
     </div>
   );
