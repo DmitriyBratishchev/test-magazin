@@ -2,10 +2,10 @@ import React from 'react';
 import { Button, ButtonGroup } from 'reactstrap';
 import PropTypes from 'prop-types';
 import s from './radioBlockField.module.css';
+import Icons from '../../ui/icons';
 
 const RadioBlockField = ({ options, name, onChange, value, className }) => {
   const handleChange = ({ target }) => {
-    console.log('target select', target.value);
     onChange({ name: name, value: target.value });
   };
 
@@ -14,7 +14,7 @@ const RadioBlockField = ({ options, name, onChange, value, className }) => {
   };
 
   return (
-    <div className={ className }>
+    <div className={ s.radioBlock }>
       <ButtonGroup>
         { options.map(radio => {
           return (
@@ -25,9 +25,19 @@ const RadioBlockField = ({ options, name, onChange, value, className }) => {
               // active={ value === radio._id }
               value={ radio._id }
               className={ getClassName(radio._id) }
-              onClick={ handleChange }
+              onClick={ e => handleChange(e) }
             >
-              { radio.name }
+              { radio?.name
+                ? radio.name
+                : <Icons
+                  name={ radio.icon.name }
+                  width={ radio.icon.width }
+                  height={ radio.icon.height }
+                  color={ value === radio._id ? '#2979FF' : '#787885' }
+                  className={ s.iconButton }
+                />
+
+              }
             </Button>
           );
         }) }

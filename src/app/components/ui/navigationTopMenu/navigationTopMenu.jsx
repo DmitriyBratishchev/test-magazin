@@ -1,5 +1,6 @@
 import React from 'react';
 import { useHistory, Link } from 'react-router-dom';
+import s from './navigationTopMenu.module.css';
 
 import Icons from '../icons';
 
@@ -73,13 +74,16 @@ const NavigationTopMenu = () => {
   const getColor = (linkTo) => {
     return location.pathname.includes(linkTo) ? '#2979FF' : '#787885';
   };
+  const getWeight = (linkTo) => {
+    return location.pathname.includes(linkTo) ? '500' : '400';
+  };
   return (
-    <div className='d-flex justify-content-between mt-3'>
+    <div className={ s.container }>
       { navTopMenu.map(item => {
         return (
-          <Link key={ item.text + item.linkTo } to={ `/catalog/${item.linkTo}` } className="text-center me-2">
+          <Link key={ item.text + item.linkTo } to={ `/catalog/${item.linkTo}` } className={ s.linkBlock }>
             <Icons name={ item.iconName } color={ getColor(item.linkTo) } />
-            <div className='ps-2 pe-2' style={ { color: `${getColor(item.linkTo)}`, fontSize: '14px' } }>{ item.text }</div>
+            <div className={ s.text } style={ { color: `${getColor(item.linkTo)}`, fontWeight: `${getWeight(item.linkTo)}` } }>{ item.text }</div>
           </Link>
         );
       }) }

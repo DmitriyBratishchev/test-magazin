@@ -12,7 +12,7 @@ const Catalog = () => {
   return (
     <div>
       <NavigationTopMenu />
-      <div className='row mt-5'>
+      <div className='d-flex justify-content-around'>
         <SideBar />
         <div className={ s.container + ' col' }>
           {/* <h2>Catalog</h2> */ }
