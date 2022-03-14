@@ -17,7 +17,7 @@ const CheckBoxBlock = ({ title, options, name, onChange, value, className }) => 
   };
 
   return (
-    <div className={ className }>
+    <div className={ s.container }>
       <span className={ s.title }>{ title }</span>
       {/* <ButtonGroup> */ }
       { options.map(checkbox => {

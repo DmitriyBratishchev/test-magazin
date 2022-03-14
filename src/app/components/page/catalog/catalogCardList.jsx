@@ -9,6 +9,9 @@ const CatalogCardList = () => {
       <CardVertical />
       <CardVertical />
       <CardVertical />
+      <CardVertical />
+      <CardVertical />
+      <CardVertical />
     </div>
   );
 };

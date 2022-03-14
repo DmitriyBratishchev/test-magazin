@@ -1,9 +1,14 @@
+.container {
+  margin-top: 39px;
+}
+
 .item {
   background-color: #EDEDF0;;
   border-radius: 99px;
-  margin-right: 8px;
-  padding: 6px 12px 5px;
+  margin-right: 12px;
+  padding: 5px 13px 5px;
   font-size: 14px;
+  letter-spacing: .25px;
 }
 
 .item:focus {
@@ -14,7 +19,9 @@
 .title {
   font-size: 14px;
   font-weight: 500;
-  margin-right: 8px;
+  margin-right: 10px;
+  margin-left: 0;
+  letter-spacing: 0.2px;
 }
 
 .active {

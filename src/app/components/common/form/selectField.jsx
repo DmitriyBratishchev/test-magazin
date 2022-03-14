@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import s from './selectedField.module.css';
+import classNames from 'classnames';
 
 const SelectField = ({
   label,
@@ -9,10 +10,10 @@ const SelectField = ({
   name,
   onChange,
   onFocus,
-  defaultOption,
   options,
   className,
   required,
+  disabled = true,
   error
 }) => {
   const handleChange = ({ target }) => {
@@ -40,14 +41,16 @@ const SelectField = ({
   //     : options;
 
   return (
-    <div className={ `mb-4 position-relative + ${className}` }>
+    <div className={ s.containerSelect }>
       { label && <label htmlFor={ name } className={ getLableClasses() }>
         { label } { required && <span className='text-danger'>*</span> }
       </label> }
       <select
         contextMenu=''
+        d
+        disabled={ disabled }
         onFocus={ onFocus }
-        className={ getInputClasses() }
+        className={ classNames(getInputClasses(), s.arrow, s.select) }
         name={ name }
         value={ value }
         onChange={ handleChange }
@@ -70,11 +73,11 @@ SelectField.propTypes = {
   name: PropTypes.string,
   value: PropTypes.string,
   className: PropTypes.string,
-  defaultOption: PropTypes.string,
   error: PropTypes.string,
   onChange: PropTypes.func,
   onFocus: PropTypes.func,
   required: PropTypes.bool,
+  disabled: PropTypes.bool,
   options: PropTypes.oneOfType([PropTypes.array, PropTypes.object])
 };
 

@@ -7,7 +7,7 @@ const Avatar = ({ imageLink, width = '30' }) => {
       src={ imageLink || `https://avatars.dicebear.com/api/avataaars/${(Math.random() + 1)
         .toString(36)
         .slice(-5)}.svg` }
-      className='rounded-circle shadow-1-strong me-3'
+      className='rounded-circle shadow-1-strong'
       alt='avatar'
       width={ width }
     />

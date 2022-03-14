@@ -1,9 +1,42 @@
+.containerSelect {
+  position: relative;
+  margin-right: 16px;
+}
+
 .labelIn {
   position: absolute;
-  left: 10px;
-  top: -13px;
+  font-size: 11px;
+  left: 8px;
+  top: -9px;
   background: #ffffff;
-  padding: 0 4px;
+  padding: 0 3px;
+  letter-spacing: .4px;
+}
+
+.select {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: .25px;
+  padding-top: 0.4rem;
+  padding-right: 2.3rem;
+  padding-bottom: 0.4rem;
+  padding-left: 0.65rem;
+  border: 1px solid #5A5B6A;
+  border-radius: 4px;
+}
+
+.select:disabled {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: .25px;
+  padding-top: 0.4rem;
+  padding-right: 2rem;
+  padding-bottom: 0.4rem;
+  padding-left: 0.65rem;
+  border: 1px solid #5A5B6A;
+  border-radius: 4px;
+  background-color: #ffffff;
+  opacity: .5;
 }
 
 .arrow {

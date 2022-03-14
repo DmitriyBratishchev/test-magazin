@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 9px;
+  margin-bottom: 40px;
+}
+
+.linkBlock {
+  text-align: center;
+  padding: 4px;
+}
+
+.text {
+  font-size: 14px;
+  letter-spacing: .1px;
+  padding-top: 2px;
+}
