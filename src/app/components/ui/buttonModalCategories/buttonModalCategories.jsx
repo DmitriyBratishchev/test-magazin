@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { Button, Modal, ModalBody, ModalHeader } from 'reactstrap';
+import { Modal, ModalBody, ModalHeader } from 'reactstrap';
 import PropTypes from 'prop-types';
 import ListCategories from '../listCategories/listCategories';
 import Icons from '../icons';
+import s from './buttonModalCategories.module.css';
 
 const ButtonModalCategories = () => {
   const [isOpen, setOpen] = useState(false);
@@ -10,17 +11,16 @@ const ButtonModalCategories = () => {
   const toggleOpen = () => {
     setOpen(prev => !prev);
   };
+  // 'ps-3 pe-3 mb-3 d-flex align-items-center'
   return (
-    <>
-      <Button
-        className='ps-3 pe-3 mb-3 d-flex align-items-center'
-        color="primary"
+    <div style={ { marginBottom: '46px' } }>
+      <button
+        className={ s.button }
         onClick={ toggleOpen }
-        outline
       >
         <Icons name='lines' width='18' height='12' color='#2264D1' />
-        <span className='ms-4 me-4' style={ { fontSize: '24px' } }>Departments</span>
-      </Button>
+        <span className={ s.text }>Departments</span>
+      </button>
       <Modal
         isOpen={ isOpen }
         centered
@@ -35,7 +35,7 @@ const ButtonModalCategories = () => {
           <ListCategories toggle={ toggleOpen } />
         </ModalBody>
       </Modal>
-    </>
+    </div>
   );
 };
 

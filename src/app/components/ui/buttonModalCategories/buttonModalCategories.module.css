@@ -1,0 +1,30 @@
+.button {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 9px 58px 9px 17px;
+  border: 1px solid #9DC2FF;
+  border-radius: 8px;
+  background: #FFFFFF;
+}
+.button:focus {
+  box-shadow: none;
+  font-weight: 400;
+}
+.button:active{
+  transform: scale(.98, .98);
+}
+.button:hover {
+  color: #2264D1;
+  font-weight: 400;
+  box-shadow: 0px 2px 4px rgba(27, 78, 163, 0.2), 0px 4px 8px rgba(41, 121, 255, 0.2);
+}
+
+.text {
+  font-family: 'Quicksand';
+  font-size: 24px;
+  line-height: 36px;
+  font-weight: 700;
+  color: #2264D1;
+  margin-left: 54px;
+}

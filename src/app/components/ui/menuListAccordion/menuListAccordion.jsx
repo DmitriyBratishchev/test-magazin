@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 // import { Input, Label } from 'reactstrap';
 import { Link } from 'react-router-dom';
@@ -71,13 +71,13 @@ import './menuListAccordion.css';
 
 const MenuListAccordion = ({ itemMenu }) => {
   // const [listMenu] = useState(itemMenu);
-  const [isOpen, setOpen] = useState(false);
+  // const [isOpen, setOpen] = useState(false);
 
   // const handleToggle = () => {
   //   setOpen(prev => !prev);
   // };
 
-  console.log(isOpen, setOpen, itemMenu);
+  // console.log(isOpen, setOpen, itemMenu);
 
   return (
     <div className="">
