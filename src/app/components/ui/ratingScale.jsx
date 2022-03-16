@@ -4,7 +4,6 @@ import s from './ratingScale.module.css';
 
 const RatingScale = ({ rating }) => {
   const widthInPercent = 100 * rating / 5;
-  console.log('rate', widthInPercent);
   return (
     <div className='d-flex align-items-center' style={ { fontSize: '12px' } }>
       <div className={ s.starBlock } >

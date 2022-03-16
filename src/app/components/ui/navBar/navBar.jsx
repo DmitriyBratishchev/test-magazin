@@ -32,15 +32,15 @@ const NavBar = () => {
                 <Link className={ `${s.textNav}` } to='#' >Register</Link>
               </li>
             </ul>
-            <form className='d-flex me-auto' style={ { marginLeft: '111px' } }>
-              <div className='position-relative'>
+            <form className='d-flex justify-content-center ms-auto me-0' style={ { flexGrow: '1', paddingLeft: 21 } }>
+              <div className='position-relative' style={ { flexGrow: '1', maxWidth: '668px' } }>
                 <input
                   id="nav-search"
                   className={ `form-control rounded-pill ${s.navSearch}` }
                   type='text'
                   placeholder='Поиск'
                   aria-label='Search'
-                  value={ 'useless items on white background' }
+                // value={ 'useless items on white background' }
                 >
                 </input>
                 <label htmlFor="nav-search" className={ s.navSearchIcon }>

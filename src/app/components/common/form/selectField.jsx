@@ -47,7 +47,6 @@ const SelectField = ({
       </label> }
       <select
         contextMenu=''
-        d
         disabled={ disabled }
         onFocus={ onFocus }
         className={ classNames(getInputClasses(), s.arrow, s.select) }

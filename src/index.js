@@ -10,15 +10,18 @@ import reportWebVitals from './reportWebVitals';
 import { Router } from 'react-router-dom';
 import history from './app/utils/history';
 
-// import { Provider } from 'react-redux';
+import { createStore } from './app/store/createStore';
+import { Provider } from 'react-redux';
+
+const store = createStore();
 
 ReactDOM.render(
   <React.StrictMode>
-    {/* <Provider> */}
-    <Router history={history}>
-      <App />
-    </Router>
-    {/* </Provider> */}
+    <Provider store={store}>
+      <Router history={history}>
+        <App />
+      </Router>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

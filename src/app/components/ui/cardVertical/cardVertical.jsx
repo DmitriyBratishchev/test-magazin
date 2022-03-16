@@ -1,28 +1,30 @@
 import React from 'react';
 import { Button, CardImg, CardText, CardTitle } from 'reactstrap';
+import PropTypes from 'prop-types';
 import RatingScale from '../ratingScale';
 import s from './cardVertical.module.css';
 
-const CardVertical = () => {
+const CardVertical = ({ data }) => {
+  const { image, title, price, body, rate } = data;
   return (
     <div className={ s.cardVertical + ' p-3 m-2' }>
       <CardImg
         alt='Foto'
         top
         width='100%'
-        src='/img/IMG_7349.jpg'
+        src={ image }
       />
       <CardText className={ s.discription }>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, doloremque!
+        { title }
       </CardText>
       <CardTitle className={ s.price } >
-        $25.43
+        ${ price }
       </CardTitle>
       <CardText className={ s.options }>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, doloremque!
+        { body }
       </CardText>
       <div className='d-flex justify-content-between align-items-center'>
-        <RatingScale rating={ 4.3 } />
+        <RatingScale rating={ rate } />
         <Button
           // className={ s.price }
           outline
@@ -34,6 +36,15 @@ const CardVertical = () => {
       </div>
     </div>
   );
+};
+
+CardVertical.propTypes = {
+  // image: PropTypes.string,
+  // title: PropTypes.string,
+  // body: PropTypes.string,
+  // price: PropTypes.number,
+  // rate: PropTypes.number,
+  data: PropTypes.object
 };
 
 export default CardVertical;

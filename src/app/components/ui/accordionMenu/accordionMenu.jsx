@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { Input, Label } from 'reactstrap';
 import './accordionMenu.css';
@@ -58,9 +58,7 @@ import './accordionMenu.css';
 
 const AccordionMenu = ({ items, name, header }) => {
   // const [listMenu, setListMenu] = useState(itemMenu);
-  const [isOpen, setOpen] = useState(false);
-
-  console.log(isOpen, setOpen, items);
+  // const [isOpen, setOpen] = useState(false);
 
   return (
     <div className="accordion" id={ `accordion${name}` }>

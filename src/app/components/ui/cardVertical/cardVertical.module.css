@@ -1,6 +1,8 @@
 .cardVertical {
   width: calc(25% - 16px);
   border-radius: 8px;
+  display: flex;
+  flex-direction: column;
 }
 
 .cardVertical:hover {
@@ -9,7 +11,7 @@
 
 .discription {
   letter-spacing: .0275em;
-  color: #19191D
+  color: #19191D;
 }
 
 .price {
@@ -21,4 +23,5 @@
   letter-spacing: .0175em;
   color: #787885;
   line-height: 143%;
+  flex-grow: 1;
 }

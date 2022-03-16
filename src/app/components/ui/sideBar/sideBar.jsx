@@ -64,7 +64,7 @@ const initialMenu = [
 
 const SideBar = () => {
   return (
-    <div className='col ms-4 me-3' >
+    <div className='col me-3' >
       <ButtonModalCategories />
       <div className="ms-4">
         <MenuListAccordion itemMenu={ initialMenu } />
