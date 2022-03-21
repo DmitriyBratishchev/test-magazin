@@ -1,0 +1,4 @@
+button.page-link:focus{
+  background-color: #fff;
+  box-shadow: none;
+}

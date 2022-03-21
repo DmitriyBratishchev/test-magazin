@@ -15,7 +15,7 @@ const Catalog = () => {
       <div className='d-flex justify-content-around'>
         <SideBar />
         <div className={ s.container + ' col' }>
-          {/* <h2>Catalog</h2> */ }
+          <h2 className='text-primary'>Catalog</h2>
           <CatalogPanel />
           {/* <h3>{ categoryName || 'Показать всё' }</h3> */ }
           {/* { categoryName && <p>filter: { underCategory || 'Показать все подкатегории' } </p> } */ }

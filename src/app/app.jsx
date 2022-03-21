@@ -7,7 +7,12 @@ import Main from './layout/main';
 function App() {
   console.log('start app');
   return (
-    <div className="App d-flex flex-column jus">
+    <div
+      className="App d-flex flex-column jus"
+      style={ {
+        '--bs-primary-rgb': '200,200,200'
+      } }
+    >
       <NavBar />
       <div className="container flex-grow-1">
         <Main />
