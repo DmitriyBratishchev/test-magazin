@@ -4,12 +4,14 @@ import PropTypes from 'prop-types';
 import s from './checkboxBlock.module.css';
 
 const CheckBoxBlock = ({ title, options, name, onChange, value, className }) => {
+  console.log('checkBox value', value);
   const handleChange = ({ target }) => {
+    console.log('checkBox target', target.value);
     const index = value.indexOf(target.value);
-    index === -1
-      ? value.push(target.value)
-      : value.splice(index, 1);
-    onChange({ name: name, value: value });
+    const newValue = index === -1
+      ? [...value, target.value]
+      : [...value].filter((e, i) => i !== index);
+    onChange({ name: name, value: newValue });
   };
 
   const getClassName = (id) => {

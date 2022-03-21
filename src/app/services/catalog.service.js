@@ -6,6 +6,14 @@ const catalogService = {
   get: async () => {
     const { data } = await httpService.get(catalogEndpoint);
     return data;
+  },
+  getFiler: async (query) => {
+    const { data } = await httpService.get(catalogEndpoint + `?${query}`);
+    return data;
+  },
+  getCartById: async (id) => {
+    const { data } = await httpService.get(catalogEndpoint + id);
+    return data;
   }
   // create: async (payload) => {
   //   const { data } = await httpService.post(catalogEndpoint, payload);

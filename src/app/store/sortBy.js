@@ -34,8 +34,9 @@ export const setSortBy = (id = 0) => (dispatch, getState) => {
   dispatch(sortBy(id));
 };
 
-export const getCatalogAfterSort = (entities) => (state) => {
+export const getCatalogAfterSort = () => (state) => {
   const id = state.sortBy.sort;
+  const entities = state.catalog.entities;
   return switchSort(id, entities);
 };
 

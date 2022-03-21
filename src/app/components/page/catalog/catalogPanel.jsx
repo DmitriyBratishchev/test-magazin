@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setFilter } from '../../../store/filter';
+import { loadCatalogListFilteredUser } from '../../../store/catalog';
+// import { setFilter } from '../../../store/filter';
 import { setSortBy } from '../../../store/sortBy';
+import { getLoadingUser, getSelectedUser, getUserList, loadUsersList, setSelectedUser } from '../../../store/user';
 // import { CardImg } from 'reactstrap';
 // import { Button, ButtonGroup } from 'reactstrap';
 import RadioBlockField from '../../common/form/radioBlockField';
@@ -38,14 +40,14 @@ const typeList = [
   { _id: '222', icon: { name: 'rowlist', width: '18', height: '18' } }
 ];
 
-const related = [
-  { _id: '1111', name: 'меньше $50' },
-  { _id: '2222', name: '$50.01-100' },
-  { _id: '3333', name: '$100.01-150' },
-  { _id: '4444', name: '$150.01-200' },
-  { _id: '5555', name: '$200.01-250' },
-  { _id: '6666', name: 'свыше $250' }
-];
+// const related = [
+//   { _id: '1111', name: 'меньше $50' },
+//   { _id: '2222', name: '$50.01-100' },
+//   { _id: '3333', name: '$100.01-150' },
+//   { _id: '4444', name: '$150.01-200' },
+//   { _id: '5555', name: '$200.01-250' },
+//   { _id: '6666', name: 'свыше $250' }
+// ];
 
 const initialOptions = {
   sortBy: '0',
@@ -53,33 +55,40 @@ const initialOptions = {
   sortBy2: '1b',
   visibility: '11',
   typeList: '111',
-  related: [
-    '1111',
-    '2222',
-    '3333',
-    '4444',
-    '5555',
-    '6666'
-  ]
+  related: []
 };
 const CatalogPanel = () => {
   const dispatch = useDispatch();
+  const isLoadingUser = useSelector(getLoadingUser());
+  const userList = useSelector(getUserList());
+  const selectedUser = useSelector(getSelectedUser());
   const sortOptions = useSelector((state) => state.sortBy.entities);
   const [options, setOptions] = useState(initialOptions);
 
+  console.log('isLoadingUser', !isLoadingUser);
+
+  useEffect(() => {
+    dispatch(loadUsersList());
+  });
   const handleChange = (target) => {
-    setOptions((prev) => ({
-      ...prev,
-      [target.name]: target.value
-    }));
+    if (target.name === 'related') {
+      console.log('name = related', target.value);
+      dispatch(setSelectedUser(target.value));
+      dispatch(loadCatalogListFilteredUser(target.value));
+    } else {
+      setOptions((prev) => ({
+        ...prev,
+        [target.name]: target.value
+      }));
+    }
   };
 
   useEffect(() => {
     dispatch(setSortBy(options.sortBy));
   }, [options.sortBy]);
-  useEffect(() => {
-    dispatch(setFilter({ price: [...options.related] }));
-  }, [options]);
+  // useEffect(() => {
+  //   dispatch(setFilter({ price: [...options.related] }));
+  // }, [options]);
 
   return (
     <div className="mt-3 mb-3">
@@ -127,14 +136,17 @@ const CatalogPanel = () => {
         </div>
       </div>
       <div>
-        <CheckBoxBlock
-          title='Related'
-          className='mt-4'
-          options={ related }
-          onChange={ handleChange }
-          value={ options.related }
-          name='related'
-        />
+        { !isLoadingUser &&
+          <CheckBoxBlock
+            title='Related'
+            className='mt-4'
+            options={ userList || [] }
+            onChange={ handleChange }
+            value={ selectedUser }
+            name='related'
+          />
+
+        }
 
       </div>
     </div>
