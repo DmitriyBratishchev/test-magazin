@@ -8,7 +8,7 @@ const initialState = {
 };
 
 const commentSlice = createSlice({
-  name: 'cart',
+  name: 'card',
   initialState,
   reducers: {
     commentRequested: (state) => {
@@ -28,10 +28,10 @@ const commentSlice = createSlice({
 const { actions, reducer: commentReducer } = commentSlice;
 const { commentRequested, commentReceved, commentRequestedFiled } = actions;
 
-export const loadComments = (idCart) => async (dispatch) => {
+export const loadComments = (idCard) => async (dispatch) => {
   dispatch(commentRequested());
   try {
-    const comments = await commentService.getCommentsByIdCart(idCart);
+    const comments = await commentService.getCommentsByIdCard(idCard);
     dispatch(commentReceved(comments));
   } catch (error) {
     dispatch(commentRequestedFiled(error.message));

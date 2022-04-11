@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 // import logo from './../../../img/label.jpg';
 import { Link } from 'react-router-dom';
 import Avatar from '../avatar';
@@ -8,9 +8,17 @@ import s from './navBar.module.css';
 import Logo from '../logo/logo';
 import Icons from '../icons';
 import classNames from 'classnames';
+// import { basketService } from '../../../services/basket.service';
+import { useDispatch, useSelector } from 'react-redux';
+import { getBasketLength, loadListBasket } from '../../../store/basket';
 // import Logo from '../logo';
 
 const NavBar = () => {
+  const dispatch = useDispatch();
+  const count = useSelector(getBasketLength());
+  useEffect(() => {
+    dispatch(loadListBasket());
+  }, [count]);
   return (
     <div>
       <nav className='navbar navbar-expand-md navbar-dark mb-3' >
@@ -60,7 +68,7 @@ const NavBar = () => {
             <div className="nav-item">
               <Link className={ s.navButton } to='/basket'>
                 <span className={ s.text }>My cart</span>
-                <span className={ s.cartCount }>5</span>
+                <span className={ s.cartCount }>{ count }</span>
               </Link>
             </div>
             <div className='navbar-nav nav-item' style={ { marginLeft: '14px' } }>

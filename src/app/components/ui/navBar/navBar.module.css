@@ -92,7 +92,8 @@ button.textNav:hover {
   text-align: center;
   color: #ffffff;
   border-radius: 99px;
-  width: 20px;
+  padding: 0 5px;
+  min-width: 20px;
   height: 20px;
   right: -2px;
   top: -4px;

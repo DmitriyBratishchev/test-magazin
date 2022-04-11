@@ -8,7 +8,7 @@ function App() {
   console.log('start app');
   return (
     <div
-      className="App d-flex flex-column jus"
+      className="App d-flex flex-column"
       style={ {
         '--bs-primary-rgb': '200,200,200'
       } }

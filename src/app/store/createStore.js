@@ -1,5 +1,6 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
-import cartReducer from './cart';
+import basketReducer from './basket';
+import cardReducer from './card';
 import catalogReducer from './catalog';
 import commentReducer from './comment';
 import filterReducer from './filter';
@@ -11,8 +12,9 @@ const rootReducer = combineReducers({
   sortBy: sortByReducer,
   filter: filterReducer,
   user: userReducer,
-  cart: cartReducer,
-  comment: commentReducer
+  card: cardReducer,
+  comment: commentReducer,
+  basket: basketReducer
 });
 
 export function createStore() {

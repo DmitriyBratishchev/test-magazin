@@ -11,7 +11,7 @@ const catalogService = {
     const { data } = await httpService.get(catalogEndpoint + `?${query}`);
     return data;
   },
-  getCartById: async (id) => {
+  getCardById: async (id) => {
     const { data } = await httpService.get(catalogEndpoint + id);
     return data;
   }
