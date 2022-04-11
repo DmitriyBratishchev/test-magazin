@@ -3,8 +3,8 @@ import httpService from './http.service';
 const commentEndpoint = 'comments/';
 
 const commentService = {
-  getCommentsByIdCart: async (idCart) => {
-    const { data } = await httpService.get(commentEndpoint + `?postId=${idCart}`);
+  getCommentsByIdCard: async (idCard) => {
+    const { data } = await httpService.get(commentEndpoint + `?postId=${idCard}`);
     return data;
   }
 };

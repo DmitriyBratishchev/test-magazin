@@ -33,9 +33,9 @@ const CatalogCardList = () => {
   const getCatagoryName = (id) => usersList[usersList.findIndex(el => el._id.toString() === id.toString())].name;
 
   const countCatalog = catalogSort.length;
-  const catalogCrop = catalogSort.reduce((acc, cart, index) => {
+  const catalogCrop = catalogSort.reduce((acc, card, index) => {
     if (index < curentPage * pageSize && index >= (curentPage * pageSize - pageSize)) {
-      return [...acc, cart];
+      return [...acc, card];
     }
     return acc;
   }, []);
@@ -44,9 +44,9 @@ const CatalogCardList = () => {
   return (
     <>
       <div className='d-flex flex-wrap justify-content-start'>
-        { catalogCrop.map(cart => {
+        { catalogCrop.map(card => {
           return (
-            <CardVertical key={ cart.id } data={ { ...cart, category: getCatagoryName(cart.userId) } } />
+            <CardVertical key={ card.id } data={ { ...card, category: getCatagoryName(card.userId) } } />
           );
         }) }
       </div>

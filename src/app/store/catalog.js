@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import catalogService from '../services/catalog.service';
+import { getPrice } from '../utils/getPrice';
 import { getRandomNumber } from '../utils/getRandomNumber';
 
 const initialState = {
@@ -42,7 +43,7 @@ export const loadCatalogList = () => async (dispatch, getState) => {
     const content = await catalogService.get();
     const fakeCatalog = content.map(el => ({
       rate: getRandomNumber(100, 500) / 100,
-      price: getRandomNumber(100, 30000) / 100,
+      price: getPrice(el.body.length, el.title.length),
       // category: category[getRandomNumber(0, 4)],
       image: '/img/no-img.png',
       ...el
@@ -83,7 +84,7 @@ export const setCatalogAfterSort = (sortArr) => (dispatch) => {
 
 // селекторы
 export const getCatalogList = () => (state) => state.catalog.entities;
-export const getCart = (id) => (state) => {
+export const getCard = (id) => (state) => {
   console.log('id sel', id);
   console.log('entit sel', state.catalog.entities);
   return state.catalog.entities.filter(c => c.id.toString() === id);
